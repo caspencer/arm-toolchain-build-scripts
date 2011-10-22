@@ -1,0 +1,70 @@
+arm-toolchain-build-scripts
+===========================
+
+For building a gcc-based ARM toolchain on Debian GNU/Linux.
+
+Based almost entirely on YAGARTO build scripts by Michael Fischer: 
+
+http://sourceforge.net/projects/yagarto/files/YAGARTO%20for%20Windows/20110429/build-scripts-20110429.tar.bz2
+
+
+Build Instructions
+==================
+0. Install required Debian packages:
+   apt-get install build-essential automake bzip2 libtool gcc-multilib lib32ncurses5-dev
+
+1. Download / extract scripts
+
+2. Download src packages into download directory:
+
+   expat-2.0.1
+   http://sourceforge.net/projects/expat/files/expat/2.0.1/expat-2.0.1.tar.gz
+    
+   gmp-5.0.2
+   ftp://ftp.gmplib.org/pub/gmp-5.0.2/gmp-5.0.2.tar.bz2
+    
+   mpfr-3.1.0
+   (http://www.mpfr.org/mpfr-3.1.0/mpfr-3.1.0.tar.bz2
+    
+   binutils-2.21.1a
+   http://ftp.gnu.org/gnu/binutils/binutils-2.21.1a.tar.bz2
+    
+   gcc-core-4.6.1
+   ftp://sources.redhat.com/pub/gcc/releases/gcc-4.6.1/gcc-core-4.6.1.tar.bz2
+    
+   gcc-g++-4.6.1
+   ftp://sources.redhat.com/pub/gcc/releases/gcc-4.6.1/gcc-g++-4.6.1.tar.bz2
+    
+   newlib-1.19.0
+   ftp://sources.redhat.com/pub/newlib/newlib-1.19.0.tar.gz
+    
+   gdb-7.3.1
+   ftp://sources.redhat.com/pub/gdb/releases/gdb-7.3.1.tar.bz2
+    
+   mpc-0.9
+   http://www.multiprecision.org/mpc/download/mpc-0.9.tar.gz
+
+3. Update version numbers in _env-only.sh as needed (see download/README.TXT)
+
+4. Run "bash xx-build-all.sh" to start the build
+   - Go make a snack and watch a movie, it's gonna take a good 1-2 hrs to build.
+   - The build *should* be successfull if there's a file named "xx-ready.txt" and a numbered "-ready.txt" for each build script.
+
+
+Installation
+============
+
+1. cd install
+2. cp -R * /usr
+
+
+Credit
+======
+
+Credit goes to Michael Fischer (yagarto.de) for the original scripts. 
+
+My changes/tweaks:
+- removed the MinGW/MSYS-specific stuff
+- fixed some things regarding how libgmp is built and referenced (forced 32-bit build)
+- added .log files for each numbered build script
+
