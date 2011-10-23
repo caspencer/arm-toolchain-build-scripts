@@ -1,7 +1,7 @@
 arm-toolchain-build-scripts
 ===========================
 
-For building a gcc-based ARM toolchain on Debian GNU/Linux.
+Scripts for building a gcc-based ARM toolchain on Linux.
 
 Based almost entirely on YAGARTO build scripts by Michael Fischer: 
 
@@ -10,8 +10,13 @@ http://sourceforge.net/projects/yagarto/files/YAGARTO%20for%20Windows/20110429/b
 
 Build Instructions
 ==================
-0. Install required Debian packages:
+0. Install required packages
+
+   Debian:
    apt-get install build-essential automake bzip2 libtool gcc-multilib lib32ncurses5-dev
+
+   CentOS:
+   yum install gcc gcc-c++ make autoconf glibc-devel.i386 libstdc++-devel.i386 automake ncurses-devel
 
 1. Download / extract scripts
 
